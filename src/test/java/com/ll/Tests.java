@@ -3,6 +3,7 @@ package com.ll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,5 +50,18 @@ public class Tests {
         assertThat(list.indexOf("Element1")).isEqualTo(0);
         assertThat(list.indexOf("Element2")).isEqualTo(1);
         assertThat(list.indexOf("Element3")).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("clear")
+    void test005() {
+        MyArrayList<String> list = new MyArrayList<>();
+
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        list.clear();
+        assertEquals(0, list.size());
+        assertTrue(list.isEmpty());
     }
 }

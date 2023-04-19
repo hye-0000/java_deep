@@ -4,11 +4,11 @@
 ArrayList의 가장 큰 특징 -> 가변 배열
 그렇다면? -> 사이즈를 반환해주는 메소드도 필요 -> resize 만들기
 
-- [ ] add
+- [x] add
 - [ ] remove
-- [ ] get
-- [ ] size
+- [x] get
+- [x] size
 - [ ] contains
-- [ ] indexOf
+- [x] indexOf
 - [ ] clear
-- [ ] resize
+- [x] resize

@@ -56,12 +56,20 @@ public class MyArrayList<T> {
         return (T) data[index];
     }
 
-
     public int indexOf(T element) {
         for(int i = 0; i < size; i++){
             if(data[i].equals(element)) return i;
         }
 
         return -1;
+    }
+
+    public void clear(){
+        data = new Object[DEFAULT_CAPACITY];
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 }
