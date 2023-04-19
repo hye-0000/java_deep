@@ -1,5 +1,12 @@
 package com.ll;
 
+/*
+* ArrayList의 특징 -> 가변배열
+* 그렇다면? -> 사이즈를 재할당 해주는 메소드 필요
+* */
+
+import java.util.Arrays;
+
 public class MyArrayList<T> {
     private static final int DEFAULT_CAPACITY = 10; //배열의 기본 용량
     private static final Object[] EMPTY_DATA = {};  //빈 배열
@@ -19,6 +26,15 @@ public class MyArrayList<T> {
         else if(capacity < 0) throw new RuntimeException(); //음수일때 예외 처리 시키기
 
         size = 0;
+    }
+
+    private void resize(){
+        int now_capacity = data.length;     //현재 배열의 크기
+        if(now_capacity == size){
+            int new_capacity = now_capacity * 2;
+            data = Arrays.copyOf(data, new_capacity);
+        }
+        if(Arrays.equals(data,EMPTY_DATA)) data = new Object[DEFAULT_CAPACITY];     //clear() 같은것 실행했을 때 기본 용량으로 초기화
     }
 
     public int size() {
