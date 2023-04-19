@@ -72,4 +72,25 @@ public class MyArrayList<T> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    public boolean contains(T element) {
+        return indexOf(element) >= 0 ? true : false;    //인덱스가 0보다 크면 위치가 있다 -> 요소가 존재한다
+    }
+
+    public T remove(int index) {
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+
+        T element = (T) data[index];    //반환값을 저장
+        data[index] = null;
+
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+            data[i + 1] = null;
+        }
+        size--;
+
+        return element;
+    }
 }

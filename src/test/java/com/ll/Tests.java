@@ -64,4 +64,27 @@ public class Tests {
         assertEquals(0, list.size());
         assertTrue(list.isEmpty());
     }
+
+    @Test
+    @DisplayName("contains")
+    void test006() {
+        MyArrayList<String> list = new MyArrayList<>();
+
+        list.add("Element1");
+        list.add("Element2");
+        assertTrue(list.contains("Element1"));
+        assertFalse(list.contains("Element3"));
+    }
+
+    @Test
+    @DisplayName("remove")
+    void testRemove() {
+        MyArrayList<String> list = new MyArrayList<>();
+
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        assertEquals("Element2", list.remove(1));
+        assertEquals(2, list.size());
+    }
 }
