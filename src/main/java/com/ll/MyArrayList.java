@@ -42,6 +42,9 @@ public class MyArrayList<T> {
     }
 
     public boolean add(T element) {
+        resize();   //배열이 꽉 차있다면 배열을 늘려줌
+
+        data[size] = element;
         size++;
         return true;
     }
