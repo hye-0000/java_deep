@@ -37,4 +37,17 @@ public class Tests {
 
         assertThat(list.get(1)).isEqualTo("포도");
     }
+
+    @Test
+    @DisplayName("indexOf")
+    void test004() {
+        MyArrayList<String> list = new MyArrayList<>();
+
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element1");
+        assertThat(list.indexOf("Element1")).isEqualTo(0);
+        assertThat(list.indexOf("Element2")).isEqualTo(1);
+        assertThat(list.indexOf("Element3")).isEqualTo(-1);
+    }
 }
